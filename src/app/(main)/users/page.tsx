@@ -1,8 +1,10 @@
-import { UserCard } from "@/components/UserCard";
+import { UserCard } from "@/app/components/user/UserCard";
 import { getUsersData } from "@/services/usersService";
 
 export default async function UsersPage() {
-  const users = await getUsersData(100);
+  const users = await getUsersData();
+
+  console.log("---users", users);
 
   return (
     <>

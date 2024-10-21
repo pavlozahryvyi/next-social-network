@@ -6,7 +6,7 @@ export const Navigation = () => {
   const session = useSession();
 
   return (
-    <nav className="app-nav flex flex-col">
+    <nav className="flex flex-row justify-between items-center">
       <Link href="/">HOME</Link>
       {session.data && <Link href="/my">MY PROFILE</Link>}
       <Link href="/users">PEOPLE</Link>

@@ -5,7 +5,6 @@ export default function UsersLayout({
 }>) {
   return (
     <div className="h-screen overflow-y-scroll">
-      <h1>Users Page</h1>
       <div>{children}</div>
     </div>
   );

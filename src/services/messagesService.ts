@@ -23,8 +23,6 @@ export const getUserMessages = async (
 
   const responseData = await response.json();
 
-  console.log("---", responseData);
-
   if (responseData.error) {
     throw new Error("Failed to fetch messages");
   }

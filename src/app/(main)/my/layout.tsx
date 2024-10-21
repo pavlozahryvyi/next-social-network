@@ -1,5 +1,5 @@
-import { EditProfileButton } from "@/components/EditProfileButtton";
-import { ProfileInfo } from "@/components/ProfileInfo";
+import { EditProfileButton } from "@/app/components/EditProfileButtton";
+import { ProfileInfo } from "@/app/components/ProfileInfo";
 import { getMyProfileData } from "@/services/profileService";
 
 export default async function MyProfileLayout({
