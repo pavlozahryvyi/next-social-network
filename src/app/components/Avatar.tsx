@@ -4,10 +4,10 @@ import {
   Avatar as CNAvatar,
 } from "@/components/ui/avatar";
 
-export const Avatar: React.FC<{ src: string }> = ({ src }) => {
+export const Avatar: React.FC<{ src: string | null }> = ({ src }) => {
   return (
     <CNAvatar>
-      <AvatarImage src={src} />
+      <AvatarImage src={src || "/avatar/no-avatar.jpg"} />
       <AvatarFallback>CN</AvatarFallback>
     </CNAvatar>
   );

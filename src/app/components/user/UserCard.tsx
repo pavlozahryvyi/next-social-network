@@ -16,7 +16,7 @@ export const UserCard: React.FC<UserEntity> = ({
     <Card className="block max-w-48 center">
       <Link href={`/users-rendered/${id}`}>
         <CardHeader>
-          <Avatar src={small || "/avatar/no-avatar.jpg"} />
+          <Avatar src={small} />
           <CardTitle>{name}</CardTitle>
         </CardHeader>
       </Link>
