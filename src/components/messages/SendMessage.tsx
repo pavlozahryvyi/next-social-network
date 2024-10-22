@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Textarea } from "../ui/textarea";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 

@@ -1,4 +1,4 @@
-import { UserCard } from "@/app/components/user/UserCard";
+import { UserCard } from "@/components/user/UserCard";
 import { getUsersData } from "@/services/usersService";
 
 export default async function UsersPage() {

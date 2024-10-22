@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,8 +8,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/components/ui/card";
-import { Input } from "@/app/components/ui/input";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";

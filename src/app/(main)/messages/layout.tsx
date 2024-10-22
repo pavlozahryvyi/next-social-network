@@ -1,4 +1,4 @@
-import { UsersNav } from "@/app/components/messages/UsersNav";
+import { UsersNav } from "@/components/messages/UsersNav";
 import { getMessages } from "@/services/messagesService";
 
 export default async function RootLayout({
