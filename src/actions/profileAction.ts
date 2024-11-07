@@ -2,9 +2,10 @@
 import { profileEndpoints } from "@/config/endpoints";
 import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
+import { JWT } from "@/config/consts";
 
 export async function updateStatus(formData: FormData) {
-  const { value: jwt } = cookies().get("JWT")!;
+  const { value: jwt } = cookies().get(JWT)!;
   const status = formData.get("status");
 
   await fetch(profileEndpoints.updateStatus(), {

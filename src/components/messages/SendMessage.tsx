@@ -9,7 +9,7 @@ interface IProps {
 
 export const SendMessage: FC<IProps> = ({ sendMessage }) => {
   return (
-    <form action={sendMessage} className="p-2">
+    <form action={sendMessage} className="p-2 block">
       <div className="flex gap-2">
         <Textarea name="message" rows={4} className="grow" />
         <div className="flex justify-center items-center">

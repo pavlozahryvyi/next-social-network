@@ -21,7 +21,7 @@ export async function getUserProfileData(profileId: string) {
 }
 
 export async function getMyProfileData() {
-  const { value: jwt } = cookies().get("JWT")!;
+  const { value: jwt } = cookies().get(JWT)!;
   try {
     const profileInfoResponse = await fetch(profileEndpoints.getMyInfo(), {
       headers: {

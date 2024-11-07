@@ -3,6 +3,7 @@ import { getAuthHeaders } from "./utils";
 import { MessageUserEntity } from "@/entities/MessageUserEntity";
 import { MessageEntity } from "@/entities/MessagesEntity";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export const getMessages = async (): Promise<MessageUserEntity[]> => {
   const response = await fetch(messagesEndpoints.getAllMessages(), {
@@ -43,5 +44,22 @@ export const sendMessage = async (
     },
   });
 
-  revalidatePath(`/message/${userId}`);
+  revalidatePath(`/messages/${userId}`);
+};
+
+export const startDialogService = async (userId: string): Promise<void> => {
+  try {
+    await fetch(messagesEndpoints.sendMessage(userId), {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        ...getAuthHeaders(),
+      },
+    });
+  } catch (e) {
+    console.log("---some error while starting chat with a new user", e);
+    return;
+  }
+
+  redirect(`/messages/${userId}`);
 };

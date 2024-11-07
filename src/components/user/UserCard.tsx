@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar } from "../Avatar";
 import { Follow } from "./Follow";
+import { StartDialog } from "./StartDialog";
 
 export const UserCard: React.FC<UserEntity> = ({
   name,
@@ -10,18 +11,17 @@ export const UserCard: React.FC<UserEntity> = ({
   followed,
   photos,
 }) => {
-  const { small } = photos;
-
   return (
-    <Card className="block max-w-48 center">
+    <Card className="h-42">
       <Link href={`/users-rendered/${id}`}>
         <CardHeader>
-          <Avatar src={small} />
-          <CardTitle>{name}</CardTitle>
+          <Avatar src={photos.small} />
+          <CardTitle className="truncate">{name}</CardTitle>
         </CardHeader>
       </Link>
       <CardFooter>
         <Follow follow={followed} userId={id.toString()} />
+        <StartDialog userId={id.toString()} />
       </CardFooter>
     </Card>
   );

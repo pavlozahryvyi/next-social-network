@@ -19,8 +19,6 @@ export const Follow: React.FC<{ follow: boolean; userId: string }> = ({
 
     const followData = await followResult.json();
 
-    console.log("---followData", followData);
-
     setIsFollow(followData);
   };
 
