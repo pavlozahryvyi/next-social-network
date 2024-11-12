@@ -16,6 +16,7 @@ export const profileEndpoints = {
 
 export const authEndpoints = {
   signIn: () => `${BASE_URL}/auth/login`,
+  signOut: () => `${BASE_URL}/auth/login`,
   verify: () => `${BASE_URL}/auth/me`,
 };
 

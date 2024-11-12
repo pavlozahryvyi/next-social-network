@@ -31,3 +31,12 @@ export const meCheckService = async () => {
 
   return meResponse.json();
 };
+
+export const signOutService = async () => {
+  await fetch(authEndpoints.signOut(), {
+    headers: {
+      "Content-Type": "application/json",
+      ...getAuthHeaders(),
+    },
+  });
+};

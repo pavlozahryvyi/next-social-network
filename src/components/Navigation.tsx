@@ -19,7 +19,7 @@ export const Navigation = () => {
           </Link>
         </>
       )}
-      {!session.data && <Link href="/api/auth/signin">SIGN IN</Link>}
+      {!session.data && <Link href="/login">SIGN IN</Link>}
     </nav>
   );
 };

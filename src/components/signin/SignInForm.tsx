@@ -10,10 +10,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@radix-ui/react-label";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import type { FormEventHandler } from "react";
+import { Label } from "../ui/label";
 
 export const SignInForm = () => {
   const router = useRouter();

@@ -1,12 +1,16 @@
 import type { AuthOptions, User } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+import credentials from "next-auth/providers/credentials";
 import { cookies } from "next/headers";
-import { meCheckService, signInService } from "@/services/auth.service";
+import {
+  meCheckService,
+  signInService,
+  signOutService,
+} from "@/services/auth.service";
 import { JWT } from "./consts";
 
 export const authConfig: AuthOptions = {
   providers: [
-    Credentials({
+    credentials({
       credentials: {
         email: { label: "Email", type: "email", required: true },
         password: { label: "Password", type: "password", required: true },
@@ -36,6 +40,12 @@ export const authConfig: AuthOptions = {
       },
     }),
   ],
+  events: {
+    async signOut() {
+      await signOutService();
+      cookies().delete(JWT);
+    },
+  },
   pages: {
     signIn: "/login",
   },
