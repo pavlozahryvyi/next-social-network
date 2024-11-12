@@ -49,7 +49,7 @@ export const sendMessage = async (
 
 export const startDialogService = async (userId: string): Promise<void> => {
   try {
-    await fetch(messagesEndpoints.sendMessage(userId), {
+    await fetch(messagesEndpoints.startDialog(userId), {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

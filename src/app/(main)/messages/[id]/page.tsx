@@ -1,7 +1,7 @@
 import { sendMessageAction } from "@/actions/messagesAction";
 import { Message } from "@/components/messages/Message";
 import { SendMessage } from "@/components/messages/SendMessage";
-import { getUserMessages } from "@/services/messagesService";
+import { getUserMessages } from "@/services/messages.service";
 
 export default async function UsersMessages({
   params: { id },

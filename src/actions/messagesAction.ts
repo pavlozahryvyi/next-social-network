@@ -2,7 +2,7 @@
 import {
   sendMessage as sendMessageService,
   startDialogService,
-} from "@/services/messagesService";
+} from "@/services/messages.service";
 
 export async function sendMessageAction(userId: string, formData: FormData) {
   const message = formData.get("message") as string;

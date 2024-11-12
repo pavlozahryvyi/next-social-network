@@ -1,5 +1,5 @@
 import { UsersNav } from "@/components/messages/UsersNav";
-import { getMessages } from "@/services/messagesService";
+import { getMessages } from "@/services/messages.service";
 
 export default async function MessagesLayout({
   children,

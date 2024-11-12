@@ -12,8 +12,8 @@ export default async function UsersPage({
 }) {
   const { count, page } = searchParams || {};
   const { users, totalPages } = await getUsersData({
-    count: Number(count),
-    page: Number(page),
+    count: count ? Number(count) : undefined,
+    page: page ? Number(page) : undefined,
   });
 
   return (

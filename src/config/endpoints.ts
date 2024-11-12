@@ -25,4 +25,12 @@ export const messagesEndpoints = {
     `${BASE_URL}/dialogs/${userId}/messages?count=${count}`,
   sendMessage: (userId: string | number) =>
     `${BASE_URL}/dialogs/${userId}/messages`,
+  startDialog: (userId: string | number) => `${BASE_URL}/dialogs/${userId}`,
+
+  // dialogs/messages/{messageId}/viewed	15
+  // dialogs/messages/{messageId}/spam	15
+  // dialogs/messages/{messageId}	16
+  // dialogs/messages/{messageId}/restore	16
+  // dialogs/{userId}/messages/new?newerThen={date}	16
+  // dialogs/messages/new/count
 };
