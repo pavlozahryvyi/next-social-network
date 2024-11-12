@@ -1,7 +1,8 @@
 export const BASE_URL = "https://social-network.samuraijs.com/api/1.0";
 
 export const usersEndpoints = {
-  getUsers: (count: number) => `${BASE_URL}/users?count=${count}`,
+  getUsers: ({ count, page }: { count: number; page: number }) =>
+    `${BASE_URL}/users?count=${count}&page=${page}`,
   followUser: (userId: string) => `${BASE_URL}/follow/${userId}`,
 };
 

@@ -1,8 +1,6 @@
 import { usersEndpoints } from "@/config/endpoints";
 import { UserEntity } from "@/entities/UserEntity";
 import { getAuthHeaders } from "./utils";
-import { getSession } from "next-auth/react";
-import Cookies from "js-cookie";
 
 type UserResponseType = {
   items: UserEntity[];
@@ -10,17 +8,32 @@ type UserResponseType = {
   error: null;
 };
 
-export async function getUsersData(count: number = 10) {
+export async function getUsersData({
+  count = 100,
+  page = 1,
+}: {
+  count?: number;
+  page?: number;
+}) {
   try {
-    const res = await fetch(usersEndpoints.getUsers(count), {
-      headers: {
-        "Content-Type": "application/json",
-        ...getAuthHeaders(),
-      },
-    });
+    const res = await fetch(
+      usersEndpoints.getUsers({
+        count,
+        page,
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+          ...getAuthHeaders(),
+        },
+      }
+    );
     const resp: UserResponseType = await res.json();
 
-    return resp.items;
+    return {
+      users: resp.items,
+      totalPages: Math.floor(resp.totalCount / count),
+    };
   } catch {
     throw new Error("Failed to fetch users");
   }

@@ -1,3 +1,4 @@
+import { JWT } from "@/config/consts";
 import { profileEndpoints } from "@/config/endpoints";
 import { UserProfileEntity } from "@/entities/UserProfileEntity";
 import { cookies } from "next/headers";
